@@ -3,10 +3,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Vulcan.Exports.Commands;
 
 #endregion
 
-namespace Vulcan.Exports.Commands
+namespace Vulcan.Exports.Handlers
 {
     public abstract class CommandHandler<TCommand, TResponse>
         : DisposableObject, ICommandHandler<TCommand, TResponse>

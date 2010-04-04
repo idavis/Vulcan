@@ -2,19 +2,20 @@
 
 using System.Net;
 using System.Net.Mail;
+using Vulcan.Exports;
 
 #endregion
 
-namespace Vulcan.Exports
+namespace Vulcan.Commands.Network
 {
     public class SmtpServer : ISmtpServer
     {
-        public SmtpServer( SmtpTaskModel model )
+        public SmtpServer( SmtpModel model )
         {
             Model = model;
         }
 
-        public SmtpTaskModel Model { get; protected set; }
+        public SmtpModel Model { get; protected set; }
 
         #region ISmtpServer Members
 

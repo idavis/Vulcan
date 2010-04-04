@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{484078D1-9006-455D-8041-4FD6001DC518}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.Commands.Network", "..\source\Vulcan.Commands.Network\Vulcan.Commands.Network.csproj", "{39530480-D976-483D-8154-0FB428E30110}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Vulcan.vsmdi
@@ -87,6 +89,16 @@ Global
 		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|x86.ActiveCfg = Release|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{39530480-D976-483D-8154-0FB428E30110}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +108,7 @@ Global
 		{A1EC5409-EB0B-4D90-BC01-23182EA1CBED} = {3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}
 		{1DE0F65F-503B-4CA3-A010-E47C3D0C0821} = {3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}
 		{B45E5A51-1254-4544-8B9A-24DC37D54221} = {084AF9C5-613F-4FB5-92AA-98F7E3AF705A}
+		{39530480-D976-483D-8154-0FB428E30110} = {084AF9C5-613F-4FB5-92AA-98F7E3AF705A}
 		{1FF09CC2-DA39-4970-B5BA-124EA6B57183} = {484078D1-9006-455D-8041-4FD6001DC518}
 	EndGlobalSection
 EndGlobal

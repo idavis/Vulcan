@@ -40,16 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directories\Commands\DeleteDirectory.cs" />
-    <Compile Include="Directories\Commands\CreateDirectory.cs" />
-    <Compile Include="Files\Commands\CopyFilesCommand.cs" />
-    <Compile Include="Files\Commands\DeleteFilesCommand.cs" />
-    <Compile Include="Files\Handlers\CopyFilesFilesCommandHandler.cs" />
-    <Compile Include="Files\Handlers\DeleteFilesCommandHandler.cs" />
-    <Compile Include="Files\Commands\FileCommand.cs" />
-    <Compile Include="Directories\Handlers\CreateDirectoryCommandHandler.cs" />
-    <Compile Include="Directories\Commands\DirectoryCommand.cs" />
-    <Compile Include="Directories\Handlers\DeleteDirectoryCommandHandler.cs" />
+    <Compile Include="Directories\DeleteDirectory.cs" />
+    <Compile Include="Directories\CreateDirectory.cs" />
+    <Compile Include="Files\CopyFilesCommand.cs" />
+    <Compile Include="Files\DeleteFilesCommand.cs" />
+    <Compile Include="Files\CopyFilesFilesCommandHandler.cs" />
+    <Compile Include="Files\DeleteFilesCommandHandler.cs" />
+    <Compile Include="Files\FileCommand.cs" />
+    <Compile Include="Directories\CreateDirectoryCommandHandler.cs" />
+    <Compile Include="Directories\DirectoryCommand.cs" />
+    <Compile Include="Directories\DeleteDirectoryCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

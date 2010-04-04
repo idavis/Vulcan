@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using Vulcan.Commands.IO.Files.Commands;
 using Vulcan.Exports.Commands;
+using Vulcan.Exports.Handlers;
 
 #endregion
 

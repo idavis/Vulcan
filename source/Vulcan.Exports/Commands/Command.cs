@@ -1,6 +1,13 @@
+#region Using Directives
+
+using System;
+
+#endregion
+
 namespace Vulcan.Exports.Commands
 {
-    public abstract class Command : ICommand
+    [Serializable]
+    public abstract class Command : ICommand, ICloneable
     {
         protected Command()
         {
@@ -16,6 +23,15 @@ namespace Vulcan.Exports.Commands
 
         public ICommandBehavior Behavior { get; protected set; }
         public ICommandIdentity Identity { get; protected set; }
+
+        #endregion
+
+        #region Implementation of ICloneable
+
+        public virtual object Clone()
+        {
+            return MemberwiseClone();
+        }
 
         #endregion
     }

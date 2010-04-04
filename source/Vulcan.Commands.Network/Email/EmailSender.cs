@@ -1,25 +1,15 @@
 #region Using Directives
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Mail;
+using Vulcan.Exports;
 
 #endregion
 
-namespace Vulcan.Exports
+namespace Vulcan.Commands.Network
 {
-    public class EmailTaskModel : TaskModel
-    {
-        public List<string> Recipients { get; set; }
-        public string FromAddress { get; set; }
-        public string Subject { get; set; }
-        public string Body { get; set; }
-        public bool IsHtmlBody { get; set; }
-        public List<string> Attachments { get; set; }
-    }
-
     public class EmailSender : DisposableObject
     {
         public EmailSender( ISmtpServer smtpServer, EmailTaskModel emailTaskModel )

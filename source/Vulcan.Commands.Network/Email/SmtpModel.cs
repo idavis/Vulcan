@@ -1,6 +1,8 @@
-namespace Vulcan.Exports
+using Vulcan.Exports.Commands;
+
+namespace Vulcan.Commands.Network
 {
-    public class SmtpTaskModel : TaskModel
+    public class SmtpModel
     {
         public string Password { get; protected set; }
         public string UserName { get; protected set; }

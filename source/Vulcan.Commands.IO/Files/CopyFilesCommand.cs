@@ -1,11 +1,13 @@
 #region Using Directives
 
+using System;
 using System.Collections.Generic;
 
 #endregion
 
 namespace Vulcan.Commands.IO.Files.Commands
 {
+    [Serializable]
     public class CopyFilesCommand : FileCommand
     {
         public string Destination { get; set; }
