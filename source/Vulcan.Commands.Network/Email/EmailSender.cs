@@ -8,9 +8,9 @@ using Vulcan.Exports;
 
 #endregion
 
-namespace Vulcan.Commands.Network
+namespace Vulcan.Commands.Network.Email
 {
-    public class EmailSender : DisposableObject
+    public class EmailSender : Disposable
     {
         public EmailSender( ISmtpServer smtpServer, EmailTaskModel emailTaskModel )
         {

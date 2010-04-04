@@ -1,4 +1,7 @@
-public interface IContext
+namespace Vulcan.Exports.Interfaces
 {
-    T Resolve<T>( T value );
+    public interface IContext
+    {
+        T Resolve<T>( T value );
+    }
 }

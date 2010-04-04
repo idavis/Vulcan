@@ -6,7 +6,7 @@ using Vulcan.Exports;
 
 #endregion
 
-namespace Vulcan.Commands.Network
+namespace Vulcan.Commands.Network.Email
 {
     public class SmtpServer : ISmtpServer
     {

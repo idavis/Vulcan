@@ -1,10 +1,10 @@
-﻿#region Using Directives
+#region Using Directives
 
-using Vulcan.Exports.Commands;
+using Vulcan.Exports.Interfaces;
 
 #endregion
 
-namespace Vulcan.Exports
+namespace Vulcan.Exports.View
 {
     public class CommandView<T> where T : ICommand
     {

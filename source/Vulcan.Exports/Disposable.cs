@@ -1,12 +1,13 @@
 #region Using Directives
 
 using System;
+using Vulcan.Exports.Interfaces;
 
 #endregion
 
 namespace Vulcan.Exports
 {
-    public abstract class DisposableObject : IDisposableObject
+    public abstract class Disposable : IDisposableObject
     {
         #region IDisposableObject Members
 
@@ -22,15 +23,18 @@ namespace Vulcan.Exports
 
         protected virtual void Dispose( bool disposing )
         {
-            if ( !IsDisposed )
+            if ( IsDisposed )
             {
-                if ( disposing )
-                {
-                    DisposeManagedResources();
-                }
-                DisposeUnmanagedResources();
-                IsDisposed = true;
+                return;
             }
+
+            if ( disposing )
+            {
+                DisposeManagedResources();
+            }
+
+            DisposeUnmanagedResources();
+            IsDisposed = true;
         }
 
         protected virtual void DisposeManagedResources()

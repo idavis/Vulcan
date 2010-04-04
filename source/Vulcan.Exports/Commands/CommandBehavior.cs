@@ -1,4 +1,5 @@
 using System;
+using Vulcan.Exports.Interfaces;
 
 namespace Vulcan.Exports.Commands
 {

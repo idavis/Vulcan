@@ -1,4 +1,4 @@
-namespace Vulcan.Exports
+namespace Vulcan.Exports.Interfaces
 {
     public interface IConfigurationSettings
     {

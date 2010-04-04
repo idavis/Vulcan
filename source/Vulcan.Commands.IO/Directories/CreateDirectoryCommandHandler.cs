@@ -5,6 +5,7 @@ using System.Threading;
 using Vulcan.Commands.IO.Directories.Commands;
 using Vulcan.Exports.Commands;
 using Vulcan.Exports.Handlers;
+using Vulcan.Exports.Interfaces;
 
 #endregion
 

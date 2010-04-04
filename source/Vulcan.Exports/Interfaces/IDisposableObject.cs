@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace Vulcan.Exports
+namespace Vulcan.Exports.Interfaces
 {
     public interface IDisposableObject : IDisposable
     {

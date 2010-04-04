@@ -2,10 +2,11 @@
 
 using System;
 using System.Collections.Generic;
+using Vulcan.Exports.Commands;
 
 #endregion
 
-namespace Vulcan.Exports.Commands
+namespace Vulcan.Exports.Interfaces
 {
     public interface IResponse
     {

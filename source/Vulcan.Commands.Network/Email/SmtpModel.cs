@@ -1,6 +1,6 @@
 using Vulcan.Exports.Commands;
 
-namespace Vulcan.Commands.Network
+namespace Vulcan.Commands.Network.Email
 {
     public class SmtpModel
     {

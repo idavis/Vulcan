@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Email\EmailSender.cs" />
     <Compile Include="Email\EmailTaskModel.cs" />
+    <Compile Include="Email\ISmtpServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Email\SmtpServer.cs" />
     <Compile Include="Email\SmtpModel.cs" />

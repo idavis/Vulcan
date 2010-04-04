@@ -1,4 +1,4 @@
-namespace Vulcan.Exports.Commands
+namespace Vulcan.Exports.Interfaces
 {
     public interface ICommandIdentity
     {

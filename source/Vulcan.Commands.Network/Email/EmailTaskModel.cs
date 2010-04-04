@@ -5,7 +5,7 @@ using Vulcan.Exports.Commands;
 
 #endregion
 
-namespace Vulcan.Commands.Network
+namespace Vulcan.Commands.Network.Email
 {
     public class EmailTaskModel : Command
     {

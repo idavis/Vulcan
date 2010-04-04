@@ -4,7 +4,7 @@ using System.Net.Mail;
 
 #endregion
 
-namespace Vulcan.Exports
+namespace Vulcan.Commands.Network.Email
 {
     /// <summary>
     /// Represents an SMTP server that can be used to send email messages.
