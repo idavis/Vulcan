@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.Resources", "..\sour
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.UI", "..\source\Vulcan.UI\Vulcan.UI.csproj", "{1DE0F65F-503B-4CA3-A010-E47C3D0C0821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.Commands.IO", "..\source\Vulcan.Commands.IO\Vulcan.Commands.IO.csproj", "{B45E5A51-1254-4544-8B9A-24DC37D54221}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{1DE0F65F-503B-4CA3-A010-E47C3D0C0821}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1DE0F65F-503B-4CA3-A010-E47C3D0C0821}.Release|x86.ActiveCfg = Release|x86
 		{1DE0F65F-503B-4CA3-A010-E47C3D0C0821}.Release|x86.Build.0 = Release|x86
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

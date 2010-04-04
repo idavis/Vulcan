@@ -11,7 +11,7 @@ namespace Vulcan.Exports.Commands
     public abstract class CommandHandler<TCommand, TResponse>
         : DisposableObject, ICommandHandler<TCommand, TResponse>
         where TCommand : ICommand
-        where TResponse : IResponse
+        where TResponse : IResponse<TCommand>
     {
         protected readonly object SyncRoot = new object();
 
@@ -77,6 +77,19 @@ namespace Vulcan.Exports.Commands
             if ( handler != null )
             {
                 handler( this, EventArgs.Empty );
+            }
+        }
+
+        protected virtual void AbortIfCancellationIsRequested(ICommand command, CancellationToken token)
+        {
+            if ( !command.Behavior.SupportsCancelation )
+            {
+                return;
+            }
+
+            if (token.IsCancellationRequested)
+            {
+                token.ThrowIfCancellationRequested();
             }
         }
     }

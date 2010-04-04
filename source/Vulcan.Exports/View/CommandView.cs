@@ -6,10 +6,6 @@ using Vulcan.Exports.Commands;
 
 namespace Vulcan.Exports
 {
-    public class CommandViewModel<T> where T : ICommand
-    {
-    }
-
     public class CommandView<T> where T : ICommand
     {
     }

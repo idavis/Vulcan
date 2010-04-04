@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{38082E50-4D18-4905-AC6D-B6ACEE0572FD}</ProjectGuid>
+    <ProjectGuid>{B45E5A51-1254-4544-8B9A-24DC37D54221}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vulcan.Exports</RootNamespace>
-    <AssemblyName>Vulcan.Exports</AssemblyName>
+    <RootNamespace>Vulcan.Commands.IO</RootNamespace>
+    <AssemblyName>Vulcan.Commands.IO</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,31 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandState.cs" />
-    <Compile Include="Commands\Response.cs" />
-    <Compile Include="View\CommandView.cs" />
-    <Compile Include="Commands\AbstractCommand.cs" />
-    <Compile Include="Commands\CommandBehavior.cs" />
-    <Compile Include="Commands\CommandHandler.cs" />
-    <Compile Include="Commands\CommentCommand.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\ICommandBehavior.cs" />
-    <Compile Include="Commands\ICommandHandler.cs" />
-    <Compile Include="Commands\ICommandIdentity.cs" />
-    <Compile Include="Commands\IContext.cs" />
-    <Compile Include="Commands\IResponse.cs" />
-    <Compile Include="Commands\Variables\SetVariableCommand.cs" />
-    <Compile Include="DisposableObject.cs" />
-    <Compile Include="EmailSender.cs" />
-    <Compile Include="SmtpTaskModel.cs" />
-    <Compile Include="IConfigurationSettings.cs" />
-    <Compile Include="IDisposableObject.cs" />
-    <Compile Include="ISmtpServer.cs" />
-    <Compile Include="IVariable.cs" />
+    <Compile Include="Directories\Commands\DeleteDirectory.cs" />
+    <Compile Include="Directories\Commands\CreateDirectory.cs" />
+    <Compile Include="Files\Commands\DeleteFilesCommand.cs" />
+    <Compile Include="Files\Handlers\DeleteFilesCommandHandler.cs" />
+    <Compile Include="Files\Commands\FileCommand.cs" />
+    <Compile Include="Directories\Handlers\CreateDirectoryCommandHandler.cs" />
+    <Compile Include="Directories\Commands\DirectoryCommand.cs" />
+    <Compile Include="Directories\Handlers\DeleteDirectoryCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmtpServer.cs" />
-    <Compile Include="TaskModel.cs" />
-    <Compile Include="View\CommandViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vulcan.Exports\Vulcan.Exports.csproj">
+      <Project>{38082E50-4D18-4905-AC6D-B6ACEE0572FD}</Project>
+      <Name>Vulcan.Exports</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
