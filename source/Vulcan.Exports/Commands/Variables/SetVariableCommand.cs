@@ -1,6 +1,6 @@
-﻿namespace Vulcan.Exports.Commands.Variables
+namespace Vulcan.Exports.Commands.Variables
 {
-    public class SetVariableCommand : AbstractCommand
+    public class SetVariableCommand : Command
     {
     }
 }

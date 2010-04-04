@@ -9,7 +9,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.UI", "..\source\Vulc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.Commands.IO", "..\source\Vulcan.Commands.IO\Vulcan.Commands.IO.csproj", "{B45E5A51-1254-4544-8B9A-24DC37D54221}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vulcan.Exports.Tests", "..\source\Vulcan.Exports.Tests\Vulcan.Exports.Tests.csproj", "{1FF09CC2-DA39-4970-B5BA-124EA6B57183}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26B566EF-B7AC-4490-AF40-26D59EDCFB82}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		Vulcan.vsmdi = Vulcan.vsmdi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{084AF9C5-613F-4FB5-92AA-98F7E3AF705A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{484078D1-9006-455D-8041-4FD6001DC518}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Vulcan.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -59,8 +77,25 @@ Global
 		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B45E5A51-1254-4544-8B9A-24DC37D54221}.Release|x86.ActiveCfg = Release|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38082E50-4D18-4905-AC6D-B6ACEE0572FD} = {3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}
+		{A1EC5409-EB0B-4D90-BC01-23182EA1CBED} = {3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}
+		{1DE0F65F-503B-4CA3-A010-E47C3D0C0821} = {3DCC4EDA-E4B1-4CBA-A96A-6DE5694A34D9}
+		{B45E5A51-1254-4544-8B9A-24DC37D54221} = {084AF9C5-613F-4FB5-92AA-98F7E3AF705A}
+		{1FF09CC2-DA39-4970-B5BA-124EA6B57183} = {484078D1-9006-455D-8041-4FD6001DC518}
 	EndGlobalSection
 EndGlobal

@@ -3,15 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B45E5A51-1254-4544-8B9A-24DC37D54221}</ProjectGuid>
+    <ProjectGuid>{1FF09CC2-DA39-4970-B5BA-124EA6B57183}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vulcan.Commands.IO</RootNamespace>
-    <AssemblyName>Vulcan.Commands.IO</AssemblyName>
+    <RootNamespace>Vulcan.Exports.Tests</RootNamespace>
+    <AssemblyName>Vulcan.Exports.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,35 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Directories\Commands\DeleteDirectory.cs" />
-    <Compile Include="Directories\Commands\CreateDirectory.cs" />
-    <Compile Include="Files\Commands\CopyFilesCommand.cs" />
-    <Compile Include="Files\Commands\DeleteFilesCommand.cs" />
-    <Compile Include="Files\Handlers\CopyFilesFilesCommandHandler.cs" />
-    <Compile Include="Files\Handlers\DeleteFilesCommandHandler.cs" />
-    <Compile Include="Files\Commands\FileCommand.cs" />
-    <Compile Include="Directories\Handlers\CreateDirectoryCommandHandler.cs" />
-    <Compile Include="Directories\Commands\DirectoryCommand.cs" />
-    <Compile Include="Directories\Handlers\DeleteDirectoryCommandHandler.cs" />
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Vulcan.Exports\Vulcan.Exports.csproj">
-      <Project>{38082E50-4D18-4905-AC6D-B6ACEE0572FD}</Project>
-      <Name>Vulcan.Exports</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

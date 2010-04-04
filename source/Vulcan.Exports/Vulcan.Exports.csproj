@@ -44,7 +44,7 @@
     <Compile Include="Commands\CommandState.cs" />
     <Compile Include="Commands\Response.cs" />
     <Compile Include="View\CommandView.cs" />
-    <Compile Include="Commands\AbstractCommand.cs" />
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandBehavior.cs" />
     <Compile Include="Commands\CommandHandler.cs" />
     <Compile Include="Commands\CommentCommand.cs" />
