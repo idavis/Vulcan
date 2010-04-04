@@ -6,11 +6,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1FF09CC2-DA39-4970-B5BA-124EA6B57183}</ProjectGuid>
+    <ProjectGuid>{D0728D0A-DC78-415E-9792-D65E8E3636F0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vulcan.Exports.Tests</RootNamespace>
-    <AssemblyName>Vulcan.Exports.Tests</AssemblyName>
+    <RootNamespace>Vulcan.Commands.IO.Tests</RootNamespace>
+    <AssemblyName>Vulcan.Commands.IO.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -46,11 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTestContext.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Integration\" />
-    <Folder Include="Unit\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
