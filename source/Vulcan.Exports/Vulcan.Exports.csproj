@@ -52,7 +52,7 @@
     <Compile Include="Commands\ICommandBehavior.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="Commands\ICommandIdentity.cs" />
-    <Compile Include="Commands\IContext.cs" />
+    <Compile Include="IContext.cs" />
     <Compile Include="Commands\IResponse.cs" />
     <Compile Include="Commands\Variables\SetVariableCommand.cs" />
     <Compile Include="DisposableObject.cs" />

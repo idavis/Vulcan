@@ -26,6 +26,7 @@ namespace Vulcan.Commands.IO.Files.Handlers
                 AbortIfCancellationIsRequested( command, token );
                 fileInfo.Delete();
             }
+            return new Response<DeleteFilesCommand>(command);
         }
 
         #endregion

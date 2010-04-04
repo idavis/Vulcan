@@ -31,6 +31,7 @@ namespace Vulcan.Commands.IO.Files.Handlers
                 AbortIfCancellationIsRequested( command, token );
                 File.Copy(file, "some target");
             }
+            return new Response<CopyFilesCommand>( command );
         }
 
         #endregion

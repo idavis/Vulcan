@@ -9,15 +9,20 @@ namespace Vulcan.Exports.Commands
 {
     public abstract class Response : IResponse
     {
-        public Response()
+        protected Response()
+            : this( CommandState.OK )
         {
-            Errors = new Exception[0];
         }
 
-        public Response( IEnumerable<Exception> errors, CommandState state )
+        protected Response( CommandState state )
+            : this( state, new Exception[0] )
         {
-            Errors = errors;
+        }
+
+        protected Response( CommandState state, IEnumerable<Exception> errors )
+        {
             State = state;
+            Errors = errors;
         }
 
         #region Implementation of IResponse
@@ -28,23 +33,30 @@ namespace Vulcan.Exports.Commands
         #endregion
     }
 
-    public class Response<T> : Response where T : ICommand
+    public class Response<TCommand> : Response, IResponse<TCommand> where TCommand : ICommand
     {
         public Response()
+            : this( default( TCommand ) )
         {
-            Command = default( T );
         }
 
-        public Response( T command )
+        public Response( TCommand command )
+            : this( command, CommandState.OK )
+        {
+        }
+
+        public Response( TCommand command, CommandState state )
+            : base( state )
         {
             Command = command;
         }
 
-        public Response( IEnumerable<Exception> errors, CommandState state, T command ) : base( errors, state )
+        public Response( TCommand command, CommandState state, IEnumerable<Exception> errors )
+            : base( state, errors )
         {
             Command = command;
         }
 
-        private T Command { get; set; }
+        public TCommand Command { get; set; }
     }
 }
