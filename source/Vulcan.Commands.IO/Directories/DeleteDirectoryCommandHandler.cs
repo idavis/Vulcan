@@ -2,30 +2,30 @@
 
 using System.IO;
 using System.Threading;
-using Vulcan.Commands.IO.Directories.Commands;
 using Vulcan.Exports.Commands;
 using Vulcan.Exports.Handlers;
 using Vulcan.Exports.Interfaces;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Directories.Handlers
+namespace Vulcan.Commands.IO.Directories
 {
     public class DeleteDirectoryCommandHandler : CommandHandler<DeleteDirectory, IResponse<DeleteDirectory>>
     {
         #region Overrides of CommandHandler<FolderCommand,IResponse>
 
-        public override IResponse<DeleteDirectory> Execute(IContext context, DeleteDirectory command, CancellationToken token)
+        public override IResponse<DeleteDirectory> Execute( IContext context, DeleteDirectory command,
+                                                            CancellationToken token )
         {
-            string target = context.Resolve( command.Directory );
+            string target = context.Resolve<string>(command.Directory);
             if ( !Directory.Exists( target ) )
             {
-                // return nothing to do
+                return new Response<DeleteDirectory>( command, CommandState.NothingToDo );
             }
-
-            Directory.Delete( target, command.IncludeSubFolders );
-            //return success;
-            return null;
+            var directoryInfo = new DirectoryInfo( target );
+            directoryInfo.Delete( command.IncludeSubFolders );
+            CommandState result = directoryInfo.Exists ? CommandState.CommandFailed : CommandState.OK;
+            return new Response<DeleteDirectory>( command, result );
         }
 
         #endregion

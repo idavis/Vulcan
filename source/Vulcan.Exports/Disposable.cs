@@ -7,6 +7,7 @@ using Vulcan.Exports.Interfaces;
 
 namespace Vulcan.Exports
 {
+    [Serializable]
     public abstract class Disposable : IDisposableObject
     {
         #region IDisposableObject Members

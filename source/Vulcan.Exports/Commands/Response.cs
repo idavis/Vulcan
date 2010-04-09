@@ -8,6 +8,7 @@ using Vulcan.Exports.Interfaces;
 
 namespace Vulcan.Exports.Commands
 {
+    [Serializable]
     public abstract class Response : IResponse
     {
         protected Response()
@@ -34,6 +35,7 @@ namespace Vulcan.Exports.Commands
         #endregion
     }
 
+    [Serializable]
     public class Response<TCommand> : Response, IResponse<TCommand> where TCommand : ICommand
     {
         public Response()

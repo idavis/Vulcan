@@ -2,30 +2,31 @@
 
 using System.IO;
 using System.Threading;
-using Vulcan.Commands.IO.Directories.Commands;
 using Vulcan.Exports.Commands;
 using Vulcan.Exports.Handlers;
 using Vulcan.Exports.Interfaces;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Directories.Handlers
+namespace Vulcan.Commands.IO.Directories
 {
     public class CreateDirectoryCommandHandler : CommandHandler<CreateDirectory, IResponse<CreateDirectory>>
     {
         #region Overrides of CommandHandler<FolderCommand,IResponse>
 
-        public override IResponse<CreateDirectory> Execute(IContext context, CreateDirectory command, CancellationToken token)
+        public override IResponse<CreateDirectory> Execute( IContext context, CreateDirectory command,
+                                                            CancellationToken token )
         {
-            string target = context.Resolve( command.Directory );
+            string target = context.Resolve<string>(command.Directory);
             if ( Directory.Exists( target ) )
             {
                 // return nothing to do
+                return new Response<CreateDirectory>( command, CommandState.NothingToDo );
             }
 
             DirectoryInfo directoryInfo = Directory.CreateDirectory( target );
-            //return success;
-            return null;
+            CommandState result = directoryInfo.Exists ? CommandState.OK : CommandState.CommandFailed;
+            return new Response<CreateDirectory>( command, result );
         }
 
         #endregion

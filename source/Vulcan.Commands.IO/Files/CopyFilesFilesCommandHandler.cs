@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Vulcan.Commands.IO.Files.Commands;
 using Vulcan.Exports.Commands;
 using Vulcan.Exports.Handlers;
 using Vulcan.Exports.Interfaces;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Files.Handlers
+namespace Vulcan.Commands.IO.Files
 {
     public class CopyFilesFilesCommandHandler : CommandHandler<CopyFilesCommand, IResponse<CopyFilesCommand>>
     {
@@ -20,8 +19,8 @@ namespace Vulcan.Commands.IO.Files.Handlers
         public override IResponse<CopyFilesCommand> Execute( IContext context, CopyFilesCommand command,
                                                              CancellationToken token )
         {
-            string source = context.Resolve( command.Directory );
-            string destination = context.Resolve( command.Destination );
+            string source = context.Resolve<string>(command.Directory);
+            string destination = context.Resolve<string>(command.Destination);
             IEnumerable<string> files = command.IncludePatterns.SelectMany(
                 pattern =>
                 Directory.GetFiles( source, pattern,

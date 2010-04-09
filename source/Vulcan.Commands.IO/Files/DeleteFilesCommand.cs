@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Files.Commands
+namespace Vulcan.Commands.IO.Files
 {
     [Serializable]
     public class DeleteFilesCommand : FileCommand

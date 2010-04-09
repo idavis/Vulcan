@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Files.Commands
+namespace Vulcan.Commands.IO.Files
 {
     [Serializable]
     public class CopyFilesCommand : FileCommand

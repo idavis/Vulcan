@@ -4,7 +4,7 @@ using System;
 
 #endregion
 
-namespace Vulcan.Commands.IO.Directories.Commands
+namespace Vulcan.Commands.IO.Directories
 {
     [Serializable]
     public class CreateDirectory : DirectoryCommand
