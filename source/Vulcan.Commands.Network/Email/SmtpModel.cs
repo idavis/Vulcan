@@ -1,5 +1,3 @@
-using Vulcan.Exports.Commands;
-
 namespace Vulcan.Commands.Network.Email
 {
     public class SmtpModel

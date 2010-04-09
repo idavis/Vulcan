@@ -60,6 +60,10 @@ namespace Vulcan.Exports.Commands
             Command = command;
         }
 
+        #region IResponse<TCommand> Members
+
         public TCommand Command { get; set; }
+
+        #endregion
     }
 }

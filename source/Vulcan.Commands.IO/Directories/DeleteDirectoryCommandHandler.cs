@@ -17,7 +17,7 @@ namespace Vulcan.Commands.IO.Directories
         public override IResponse<DeleteDirectory> Execute( IContext context, DeleteDirectory command,
                                                             CancellationToken token )
         {
-            string target = context.Resolve<string>(command.Directory);
+            var target = context.Resolve<string>( command.Directory );
             if ( !Directory.Exists( target ) )
             {
                 return new Response<DeleteDirectory>( command, CommandState.NothingToDo );

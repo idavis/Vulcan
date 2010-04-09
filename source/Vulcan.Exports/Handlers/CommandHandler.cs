@@ -38,7 +38,7 @@ namespace Vulcan.Exports.Handlers
             using ( var cancellationTokenSource = new CancellationTokenSource() )
             {
                 CancellationToken token = cancellationTokenSource.Token;
-                EventHandler handler = (s, e) => cancellationTokenSource.Cancel();
+                EventHandler handler = ( s, e ) => cancellationTokenSource.Cancel();
                 Canceled += handler;
                 var action = new Func<TResponse>( () => Execute( context, command, token ) );
                 Task<TResponse> task = Task<TResponse>.Factory.StartNew( action, token );
@@ -81,14 +81,14 @@ namespace Vulcan.Exports.Handlers
             }
         }
 
-        protected virtual void AbortIfCancellationIsRequested(ICommand command, CancellationToken token)
+        protected virtual void AbortIfCancellationIsRequested( ICommand command, CancellationToken token )
         {
             if ( !command.Behavior.SupportsCancelation )
             {
                 return;
             }
 
-            if (token.IsCancellationRequested)
+            if ( token.IsCancellationRequested )
             {
                 token.ThrowIfCancellationRequested();
             }

@@ -1,5 +1,3 @@
-using Vulcan.Exports.Commands;
-
 namespace Vulcan.Exports.Interfaces
 {
     public interface ICommand

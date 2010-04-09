@@ -19,18 +19,18 @@ namespace Vulcan.Commands.IO.Files
         public override IResponse<CopyFilesCommand> Execute( IContext context, CopyFilesCommand command,
                                                              CancellationToken token )
         {
-            string source = context.Resolve<string>(command.Directory);
-            string destination = context.Resolve<string>(command.Destination);
+            var source = context.Resolve<string>( command.Directory );
+            var destination = context.Resolve<string>( command.Destination );
             IEnumerable<string> files = command.IncludePatterns.SelectMany(
                 pattern =>
                 Directory.GetFiles( source, pattern,
                                     command.IncludeSubDirectories
                                         ? SearchOption.AllDirectories
                                         : SearchOption.TopDirectoryOnly ) );
-            foreach ( var file in files )
+            foreach ( string file in files )
             {
                 AbortIfCancellationIsRequested( command, token );
-                File.Copy(file, "some target");
+                File.Copy( file, "some target" );
             }
             return new Response<CopyFilesCommand>( command );
         }

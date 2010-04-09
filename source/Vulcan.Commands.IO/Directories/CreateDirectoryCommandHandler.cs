@@ -17,7 +17,7 @@ namespace Vulcan.Commands.IO.Directories
         public override IResponse<CreateDirectory> Execute( IContext context, CreateDirectory command,
                                                             CancellationToken token )
         {
-            string target = context.Resolve<string>(command.Directory);
+            var target = context.Resolve<string>( command.Directory );
             if ( Directory.Exists( target ) )
             {
                 // return nothing to do

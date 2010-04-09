@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region Using Directives
+
+using System;
 using Vulcan.Exports.Interfaces;
+
+#endregion
 
 namespace Vulcan.Exports
 {
