@@ -12,8 +12,8 @@ using Vulcan.Exports.Configuration;
 namespace Vulcan.Exports.Tests.Configuration
 {
     /// <summary>
-    /// The root test key must be created prior to running these tests
-    /// or an authorization exception will be thrown.
+    ///   The root test key must be created prior to running these tests
+    ///   or an authorization exception will be thrown.
     /// </summary>
     [TestClass]
     [Ignore]

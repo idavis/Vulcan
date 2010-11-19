@@ -40,10 +40,7 @@ namespace Vulcan.Exports.Handlers
             using ( var cancellationTokenSource = new CancellationTokenSource() )
             {
                 CancellationToken token = cancellationTokenSource.Token;
-                EventHandler handler = ( s, e ) =>
-                                       {
-                                           cancellationTokenSource.Cancel();
-                                       };
+                EventHandler handler = ( s, e ) => { cancellationTokenSource.Cancel(); };
                 Canceled += handler;
                 var action = new Func<TResponse>( () => Execute( context, command, token ) );
                 Task<TResponse> task = Task<TResponse>.Factory.StartNew( action, token );
@@ -58,7 +55,8 @@ namespace Vulcan.Exports.Handlers
                         // set state to canceled. Return canceled result;
                         task.Result.State = CommandState.Cancelled;
                     }
-                    if ( !command.Behavior.IgnoreFailue && task.Result.State == CommandState.OK )
+                    if ( !command.Behavior.IgnoreFailue &&
+                         task.Result.State == CommandState.OK )
                     {
                         // return with quit response?
                         task.Result.State = CommandState.CommandFailed;

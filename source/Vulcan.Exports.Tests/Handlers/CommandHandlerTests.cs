@@ -14,7 +14,10 @@ namespace Vulcan.Exports.Tests.Handlers
 {
     public class SimpleCommand : Command
     {
-        public SimpleCommand():base(new CommandBehavior(){SupportsCancelation = true}, null){}
+        public SimpleCommand()
+                : base( new CommandBehavior { SupportsCancelation = true }, null )
+        {
+        }
     }
 
     public class SimpleResponse : Response<SimpleCommand>
@@ -39,8 +42,8 @@ namespace Vulcan.Exports.Tests.Handlers
         {
             var handler = new SimpleCommandHandler();
             var command = new SimpleCommand();
-            Func< SimpleResponse > func = ()=>handler.Execute( new Context(), command );
-            var task = Task<SimpleResponse>.Factory.StartNew( func);
+            Func<SimpleResponse> func = () => handler.Execute( new Context(), command );
+            Task<SimpleResponse> task = Task<SimpleResponse>.Factory.StartNew( func );
             handler.Cancel();
             task.Wait();
             Assert.AreEqual( CommandState.Cancelled, task.Result.State );
