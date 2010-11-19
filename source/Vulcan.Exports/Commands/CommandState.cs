@@ -6,6 +6,7 @@ namespace Vulcan.Exports.Commands
         NothingToDo,
         CommandFailed,
         ExternalComponentFailed,
-        ErrorInCommand
+        ErrorInCommand,
+        Cancelled
     }
 }

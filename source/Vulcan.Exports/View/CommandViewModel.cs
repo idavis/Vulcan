@@ -6,7 +6,8 @@ using Vulcan.Exports.Interfaces;
 
 namespace Vulcan.Exports.View
 {
-    public class CommandViewModel<TCommand> where TCommand : ICommand
+    public class CommandViewModel<TCommand>
+            where TCommand : ICommand
     {
     }
 }

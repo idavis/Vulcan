@@ -14,7 +14,8 @@ namespace Vulcan.Commands.IO.Directories
     {
         #region Overrides of CommandHandler<FolderCommand,IResponse>
 
-        public override IResponse<CreateDirectory> Execute( IContext context, CreateDirectory command,
+        public override IResponse<CreateDirectory> Execute( IContext context,
+                                                            CreateDirectory command,
                                                             CancellationToken token )
         {
             var target = context.Resolve<string>( command.Directory );

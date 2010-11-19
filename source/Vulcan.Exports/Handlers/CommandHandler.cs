@@ -1,8 +1,10 @@
 #region Using Directives
 
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Vulcan.Exports.Commands;
 using Vulcan.Exports.Interfaces;
 
 #endregion
@@ -10,9 +12,9 @@ using Vulcan.Exports.Interfaces;
 namespace Vulcan.Exports.Handlers
 {
     public abstract class CommandHandler<TCommand, TResponse>
-        : Disposable, ICommandHandler<TCommand, TResponse>
-        where TCommand : ICommand
-        where TResponse : IResponse<TCommand>
+            : Disposable, ICommandHandler<TCommand, TResponse>
+            where TCommand : ICommand
+            where TResponse : IResponse<TCommand>
     {
         protected readonly object SyncRoot = new object();
 
@@ -38,7 +40,10 @@ namespace Vulcan.Exports.Handlers
             using ( var cancellationTokenSource = new CancellationTokenSource() )
             {
                 CancellationToken token = cancellationTokenSource.Token;
-                EventHandler handler = ( s, e ) => cancellationTokenSource.Cancel();
+                EventHandler handler = ( s, e ) =>
+                                       {
+                                           cancellationTokenSource.Cancel();
+                                       };
                 Canceled += handler;
                 var action = new Func<TResponse>( () => Execute( context, command, token ) );
                 Task<TResponse> task = Task<TResponse>.Factory.StartNew( action, token );
@@ -48,12 +53,15 @@ namespace Vulcan.Exports.Handlers
                 }
                 catch ( AggregateException ae )
                 {
-                    foreach ( Exception innerException in ae.InnerExceptions )
+                    if ( ae.InnerExceptions.Any( ex => ex is TaskCanceledException ) )
                     {
-                        if ( innerException is TaskCanceledException )
-                        {
-                            // set state to canceled.
-                        }
+                        // set state to canceled. Return canceled result;
+                        task.Result.State = CommandState.Cancelled;
+                    }
+                    if ( !command.Behavior.IgnoreFailue && task.Result.State == CommandState.OK )
+                    {
+                        // return with quit response?
+                        task.Result.State = CommandState.CommandFailed;
                     }
                 }
                 finally

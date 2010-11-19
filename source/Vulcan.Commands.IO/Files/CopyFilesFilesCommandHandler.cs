@@ -16,17 +16,19 @@ namespace Vulcan.Commands.IO.Files
     {
         #region Overrides of CommandHandler<CopyFilesCommand,IResponse>
 
-        public override IResponse<CopyFilesCommand> Execute( IContext context, CopyFilesCommand command,
+        public override IResponse<CopyFilesCommand> Execute( IContext context,
+                                                             CopyFilesCommand command,
                                                              CancellationToken token )
         {
             var source = context.Resolve<string>( command.Directory );
             var destination = context.Resolve<string>( command.Destination );
             IEnumerable<string> files = command.IncludePatterns.SelectMany(
-                pattern =>
-                Directory.GetFiles( source, pattern,
-                                    command.IncludeSubDirectories
-                                        ? SearchOption.AllDirectories
-                                        : SearchOption.TopDirectoryOnly ) );
+                    pattern =>
+                    Directory.GetFiles( source,
+                                        pattern,
+                                        command.IncludeSubDirectories
+                                                ? SearchOption.AllDirectories
+                                                : SearchOption.TopDirectoryOnly ) );
             foreach ( string file in files )
             {
                 AbortIfCancellationIsRequested( command, token );

@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Vulcan.Exports.Interfaces;
 
 #endregion
@@ -12,12 +13,12 @@ namespace Vulcan.Exports.Commands
     public abstract class Response : IResponse
     {
         protected Response()
-            : this( CommandState.OK )
+                : this( CommandState.OK )
         {
         }
 
         protected Response( CommandState state )
-            : this( state, new Exception[0] )
+                : this( state, Enumerable.Empty<Exception>() )
         {
         }
 
@@ -36,26 +37,27 @@ namespace Vulcan.Exports.Commands
     }
 
     [Serializable]
-    public class Response<TCommand> : Response, IResponse<TCommand> where TCommand : ICommand
+    public class Response<TCommand> : Response, IResponse<TCommand>
+            where TCommand : ICommand
     {
         public Response()
-            : this( default( TCommand ) )
+                : this( default( TCommand ) )
         {
         }
 
         public Response( TCommand command )
-            : this( command, CommandState.OK )
+                : this( command, CommandState.OK )
         {
         }
 
         public Response( TCommand command, CommandState state )
-            : base( state )
+                : base( state )
         {
             Command = command;
         }
 
         public Response( TCommand command, CommandState state, IEnumerable<Exception> errors )
-            : base( state, errors )
+                : base( state, errors )
         {
             Command = command;
         }

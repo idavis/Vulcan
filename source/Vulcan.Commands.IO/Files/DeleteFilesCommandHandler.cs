@@ -15,7 +15,8 @@ namespace Vulcan.Commands.IO.Files
     {
         #region Overrides of CommandHandler<DeleteFilesCommand,IResponse>
 
-        public override IResponse<DeleteFilesCommand> Execute( IContext context, DeleteFilesCommand command,
+        public override IResponse<DeleteFilesCommand> Execute( IContext context,
+                                                               DeleteFilesCommand command,
                                                                CancellationToken token )
         {
             var target = context.Resolve<string>( command.Directory );

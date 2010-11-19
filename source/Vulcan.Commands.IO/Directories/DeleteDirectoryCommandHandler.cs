@@ -14,7 +14,8 @@ namespace Vulcan.Commands.IO.Directories
     {
         #region Overrides of CommandHandler<FolderCommand,IResponse>
 
-        public override IResponse<DeleteDirectory> Execute( IContext context, DeleteDirectory command,
+        public override IResponse<DeleteDirectory> Execute( IContext context,
+                                                            DeleteDirectory command,
                                                             CancellationToken token )
         {
             var target = context.Resolve<string>( command.Directory );

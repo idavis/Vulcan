@@ -31,8 +31,9 @@ namespace Vulcan.Commands.Network.Email
                                             mailMessage.From,
                                             string.Join( ",",
                                                          mailMessage.To.Select( mailAddress => mailAddress.Address ).
-                                                             ToArray() ),
-                                            mailMessage.Subject, mailMessage.Body );
+                                                                 ToArray() ),
+                                            mailMessage.Subject,
+                                            mailMessage.Body );
                     SmtpServer.Send( mailMessage );
                 }
             }
@@ -45,15 +46,16 @@ namespace Vulcan.Commands.Network.Email
 
         private MailMessage CreateMailMessage()
         {
-            var mailMessage = new MailMessage {From = new MailAddress( EmailTaskModel.FromAddress )};
+            var mailMessage = new MailMessage { From = new MailAddress( EmailTaskModel.FromAddress ) };
             foreach (
-                MailAddress recipientAddress in
-                    EmailTaskModel.Recipients.Select( recipient => new MailAddress( recipient ) ) )
+                    MailAddress recipientAddress in
+                            EmailTaskModel.Recipients.Select( recipient => new MailAddress( recipient ) ) )
             {
                 mailMessage.To.Add( recipientAddress );
             }
             foreach (
-                Attachment attachment in EmailTaskModel.Attachments.Select( fileName => new Attachment( fileName ) ) )
+                    Attachment attachment in EmailTaskModel.Attachments.Select( fileName => new Attachment( fileName ) )
+                    )
             {
                 mailMessage.Attachments.Add( attachment );
             }

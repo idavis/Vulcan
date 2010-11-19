@@ -7,14 +7,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Vulcan.Exports.Tests
 {
     /// <summary>
-    /// Summary description for UnitTestContext
+    ///   Summary description for UnitTestContext
     /// </summary>
     [TestClass]
     public class UnitTestContext
     {
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
+        ///<summary>
+        ///  Gets or sets the test context which provides
+        ///  information about and functionality for the current test run.
         ///</summary>
         public TestContext TestContext { get; set; }
 
@@ -42,7 +42,7 @@ namespace Vulcan.Exports.Tests
         */
 
         /// <summary>
-        /// Use TestInitialize to run code before running each test 
+        ///   Use TestInitialize to run code before running each test
         /// </summary>
         [TestInitialize]
         public virtual void OnTestInitialize()
@@ -50,7 +50,7 @@ namespace Vulcan.Exports.Tests
         }
 
         /// <summary>
-        /// Use TestCleanup to run code after each test has run
+        ///   Use TestCleanup to run code after each test has run
         /// </summary>
         [TestCleanup]
         public virtual void OnTestCleanup()
